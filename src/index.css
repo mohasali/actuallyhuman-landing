@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+/* =========================================================================
+   DESIGN TOKENS  (Tailwind v4 CSS-first config)
+   Monochrome paper + ink, one signal-green accent.
+   Change a single variable below to re-theme the whole site.
+   ========================================================================= */
+@theme {
+  /* Surfaces */
+  --color-paper: #ede7da; /* warm off-white beige — primary background */
+  --color-paper-dim: #e4ddcc; /* slightly deeper paper for alternating bands */
+  --color-ink: #0b0b0b; /* pitch black — secondary surface + text */
+  --color-ink-soft: #161513; /* softened black for cards on dark sections */
+
+  /* Text accents on paper / ink */
+  --color-mute: #b3aa97; /* muted "dim ink" on paper (the two-tone headline grey) */
+  --color-mute-dark: #6c6657; /* muted text on black sections */
+
+  --color-accent: #2dd46a;;
+  --color-accent-deep: #16a34a;
+
+  /* Type */
+  --font-display: "Archivo Black", system-ui, sans-serif;
+  --font-sans: "Archivo", system-ui, sans-serif;
+  --font-mono: "Martian Mono", ui-monospace, "Cascadia Mono", monospace;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* =========================================================================
+   BASE
+   ========================================================================= */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-ink);
+  }
+
+  /* Film grain overlay for analogue, printed-matter texture */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.045;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+/* =========================================================================
+   UTILITIES + KEYFRAMES
+   ========================================================================= */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Tight, blocky display lockups */
+  .display-tight {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    line-height: 0.86;
+    text-transform: uppercase;
+  }
+
+  .label-mono {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+
+  /* Hairline rules in the brutalist/utilitarian register */
+  .rule-ink {
+    border-color: color-mix(in srgb, var(--color-ink) 14%, transparent);
+  }
+  .rule-paper {
+    border-color: color-mix(in srgb, var(--color-paper) 16%, transparent);
+  }
+}
+
+/* Blinking terminal caret */
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+.caret {
+  display: inline-block;
+  width: 0.15em;
+  height: 0.86em;
+  margin-left: 0.08em;
+  transform: translateY(0.04em);
+  background: var(--color-accent);
+  animation: caret-blink 1.05s steps(1) infinite;
+}
+
+/* Infinite marquee */
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee-x 34s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .caret,
+  .marquee-track {
+    animation: none;
+  }
+}
