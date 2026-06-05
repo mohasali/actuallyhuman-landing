@@ -46,7 +46,7 @@ export function Philosophy() {
                    <p className="text-2xl sm:text-3xl font-serif italic leading-snug">
                      "When you delegate your opinions, your humor, and your quirks to an LLM, you become nothing."
                    </p>
-                   <footer className="label-mono text-paper/50">— The Human Behind the Ink</footer>
+                   <footer className="label-mono text-paper/50">— The Nerd Behind the Ink</footer>
                 </blockquote>
              </div>
           </Reveal>
