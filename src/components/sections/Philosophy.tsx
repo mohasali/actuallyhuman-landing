@@ -2,7 +2,7 @@ import { Reveal } from '../motion/Reveal'
 
 export function Philosophy() {
   return (
-    <section id="philosophy" className="relative scroll-mt-24 py-24 sm:py-32 bg-ink text-paper overflow-hidden">
+    <section id="philosophy" className="relative scroll-mt-24 py-24 sm:py-32 bg-ink text-paper overflow-x-hidden">
       <div className="mx-auto max-w-[1320px] px-5 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <div>
@@ -32,24 +32,26 @@ export function Philosophy() {
             </Reveal>
           </div>
 
-          <Reveal delay={0.2} className="relative lg:mt-24">
-             <div className="border-2 border-paper/20 p-8 sm:p-12 relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-4 opacity-10">
-                   <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                      <path d="M12 8v4"/>
-                      <path d="M12 16h.01"/>
-                   </svg>
-                </div>
-                <h3 className="label-mono text-accent mb-6">Manifesto</h3>
-                <blockquote className="space-y-4">
-                   <p className="text-2xl sm:text-3xl font-serif italic leading-snug">
-                     "When you delegate your opinions, your humor, and your quirks to an LLM, you become nothing."
-                   </p>
-                   <footer className="label-mono text-paper/50">— The Nerd Behind the Ink</footer>
-                </blockquote>
-             </div>
-          </Reveal>
+          <div className="lg:mt-24">
+            <Reveal delay={0.2} className="relative">
+               <div className="border-2 border-paper/20 p-8 sm:p-12 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 p-4 opacity-10">
+                     <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="M12 8v4"/>
+                        <path d="M12 16h.01"/>
+                     </svg>
+                  </div>
+                  <h3 className="label-mono text-accent mb-6">Manifesto</h3>
+                  <blockquote className="space-y-4">
+                     <p className="text-2xl sm:text-3xl font-serif italic leading-snug">
+                       "When you delegate your opinions, your humor, and your quirks to an LLM, you become nothing."
+                     </p>
+                     <footer className="label-mono text-paper/50">— The Nerd Behind the Ink</footer>
+                  </blockquote>
+               </div>
+            </Reveal>
+          </div>
         </div>
       </div>
     </section>

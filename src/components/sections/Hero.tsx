@@ -82,15 +82,15 @@ function TypingHeadline() {
 
   return (
       <h1 className="display-tight mt-8 tracking-tighter text-[clamp(2.5rem,8.5vw,9rem)]">
-        <span className="block whitespace-nowrap text-mute">
+        <span className="block text-mute">
           {line1}
           {activeLine === 1 && <span className="caret" aria-hidden="true" />}
         </span>
-        <span className="block whitespace-nowrap text-ink">
+        <span className="block text-ink">
           {line2}
           {activeLine === 2 && <span className="caret" aria-hidden="true" />}
         </span>
-        <span className="block whitespace-nowrap text-ink">
+        <span className="block text-ink">
           {line3}
           {(activeLine === 3 || activeLine === 0) && (
           <span className="caret" aria-hidden="true" />)}
@@ -103,7 +103,7 @@ export function Hero() {
   const reduce = useReducedMotion()
 
   return (
-    <section className="relative overflow-hidden pt-[var(--nav-h,72px)]">
+    <section className="relative overflow-x-hidden pt-[var(--nav-h,72px)]">
       <div className="mx-auto max-w-[1320px] px-5 pb-10 pt-8 sm:px-8 sm:pt-12">
         {/* eyebrow */}
         <motion.div

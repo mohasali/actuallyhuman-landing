@@ -6,7 +6,7 @@ export function WaitlistCTA() {
   return (
     <section
       id="waitlist"
-      className="relative scroll-mt-24 overflow-hidden bg-ink text-paper"
+      className="relative scroll-mt-24 overflow-x-hidden bg-ink text-paper"
     >
       {/* faint grid texture */}
       <div
