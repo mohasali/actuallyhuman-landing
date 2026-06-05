@@ -55,7 +55,7 @@ export function Navbar() {
           </button>
             <button
                 onClick={() => scrollToId('waitlist')}
-                className="label-mono ml-1 bg-mute-dark px-5 py-2.5 text-paper transition-colors hover:bg-accent hover:text-ink"
+                className=" hidden md:flex label-mono ml-1 bg-mute-dark px-5 py-2.5 text-paper transition-colors hover:bg-accent hover:text-ink"
             >
                 Start Reading
             </button>
