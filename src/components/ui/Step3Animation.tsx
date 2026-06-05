@@ -1,4 +1,4 @@
-import { motion, useInView } from 'motion/react'
+import { motion, useInView, type Variants } from 'motion/react'
 import { useRef } from 'react'
 
 interface Step3AnimationProps {
@@ -32,7 +32,7 @@ export function Step3Animation({ body, mutedClass }: Step3AnimationProps) {
     visible: { opacity: 1, y: 0 },
   }
 
-  const stampVariants = {
+  const stampVariants: Variants = {
     hidden: { 
       opacity: 0, 
       scale: 4,

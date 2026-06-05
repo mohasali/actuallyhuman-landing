@@ -1,4 +1,4 @@
-import { motion, useInView } from 'motion/react'
+import { motion, useInView, type Variants } from 'motion/react'
 import { useRef } from 'react'
 
 interface Step2AnimationProps {
@@ -29,7 +29,7 @@ export function Step2Animation({body, mutedClass }: Step2AnimationProps) {
     visible: { opacity: 1, y: 0 },
   }
 
-  const rhythmLetterVariants = {
+  const rhythmLetterVariants: Variants = {
     hidden: { opacity: 0, y: 0 },
     animate: (i: number) => ({
       opacity: 1,
@@ -58,7 +58,6 @@ export function Step2Animation({body, mutedClass }: Step2AnimationProps) {
             <motion.span
               key={i}
               custom={i}
-              // @ts-expect-error Just Ignore it
               variants={rhythmLetterVariants}
               initial="hidden"
               animate={isInView ? "animate" : "hidden"}
