@@ -63,7 +63,7 @@ export function Step3Animation({ body, mutedClass }: Step3AnimationProps) {
       >
         <motion.span variants={itemVariants} transition={{ delay: 5.5 }}>{part1}</motion.span>
         
-        <div className="relative inline-block ml-1">
+        <div className="relative inline-block ml-1 overflow-hidden align-middle">
           <motion.span
             variants={stampVariants}
             className="text-accent inline-block border-2 border-accent px-2 py-0.5 rounded-sm"

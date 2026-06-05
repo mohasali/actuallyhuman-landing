@@ -7,7 +7,7 @@ import { Step3Animation } from '../ui/Step3Animation'
 
 export function HowItWorks() {
   return (
-    <section id="how" className="relative scroll-mt-24 py-24 sm:py-32">
+    <section id="how" className="relative scroll-mt-24 py-24 sm:py-32 overflow-x-hidden">
       <div className="mx-auto max-w-[1320px] px-5 sm:px-8">
         {/* header */}
         <div className="flex flex-col gap-6 border-b-2 border-ink pb-10 md:flex-row md:items-end md:justify-between">

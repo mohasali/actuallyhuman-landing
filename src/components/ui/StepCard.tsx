@@ -25,7 +25,7 @@ export function StepCard({ step, inverted = false, customContent }: StepCardProp
         transition: { duration: 0.5, ease: "easeInOut" }
       }}
       style={{ transformOrigin: 'top center' }}
-      className={`group relative flex h-full flex-col border-2 p-7 transition-colors duration-300 sm:p-9 ${surface}`}
+      className={`group relative flex h-full flex-col border-2 p-7 transition-colors duration-300 sm:p-9 overflow-hidden ${surface}`}
     >
       <div className="flex items-baseline justify-between">
         <span className="display-tight text-6xl sm:text-7xl">{step.index}</span>
