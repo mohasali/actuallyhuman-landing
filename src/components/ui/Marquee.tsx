@@ -12,7 +12,7 @@ export function Marquee({ items, className }: MarqueeProps) {
 
   return (
     <div
-      className={`group relative w-full overflow-hidden ${className ?? ''}`}
+      className={`group relative flex overflow-hidden ${className ?? ''}`}
       aria-hidden="true"
     >
       <div className="marquee-track flex shrink-0 items-center group-hover:[animation-play-state:paused]">
